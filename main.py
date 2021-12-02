@@ -67,9 +67,13 @@ while not is_winner:
         print("Invalid input, try again.")
         continue
 
-    if space < 0 or space > 8:
+    if space < 1 or space > 9:
         print("Space must be between 0 and 8")
         continue
+
+    # Offset the input by -1 to match the array index.
+    # User types 1, it maps to array index 0
+    space = space - 1
 
     # Now we know that the user has input a number 0-8
     # Check to make sure this space isn't currently occupied.
